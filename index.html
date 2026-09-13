@@ -3,232 +3,220 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>منصة أهل القرآن - مسجد الماجد</title>
+    <title>مسجد الماجد - منصة أهل القرآن</title>
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
-    <style> 
+    <!-- Google Fonts (Cairo) -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
         body { font-family: 'Cairo', sans-serif; }
-        .glass { background: rgba(15, 23, 42, 0.75); backdrop-filter: blur(12px); }
-        .glow { box-shadow: 0 0 25px rgba(16, 185, 129, 0.25); }
+        .glow { box-shadow: 0 0 15px rgba(16, 185, 129, 0.3); }
     </style>
 </head>
-<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col justify-between p-3 sm:p-6 lg:p-10">
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col justify-between">
 
-    <!-- الحاضنة الرئيسية (متجاوبة للديسك توب والموبايل) -->
-    <div class="max-w-6xl w-full mx-auto bg-slate-900 rounded-3xl sm:rounded-[32px] shadow-2xl border border-slate-800 overflow-hidden relative flex flex-col justify-between my-auto">
-
-        <!-- الهيدر العلوي الاحترافي -->
-        <header class="relative bg-gradient-to-r from-emerald-950 via-emerald-900/60 to-slate-900 p-6 sm:p-8 border-b border-emerald-500/30 flex flex-col md:flex-row items-center justify-between gap-6">
-            <div class="flex items-center gap-4 text-center md:text-right">
-                <div class="w-20 h-20 bg-gradient-to-tr from-emerald-500 to-emerald-300 rounded-3xl flex items-center justify-center shrink-0 shadow-xl glow border border-emerald-200/40 transform hover:rotate-3 transition">
-                    <i class="fa-solid fa-mosque text-3xl text-slate-950"></i>
+    <!-- Header / Navbar -->
+    <header class="bg-slate-900/80 backdrop-blur border-b border-emerald-500/20 sticky top-0 z-40 p-4">
+        <div class="max-w-4xl mx-auto flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-emerald-600 rounded-xl flex items-center justify-center text-white glow">
+                    <i class="fa-solid fa-mosque text-xl"></i>
                 </div>
                 <div>
-                    <div class="inline-flex items-center gap-1.5 bg-emerald-500/10 border border-emerald-500/30 px-2.5 py-0.5 rounded-full text-[10px] text-emerald-400 font-bold mb-1">
-                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span> المقرأة المباشرة
-                    </div>
-                    <h1 class="text-2xl sm:text-3xl font-black text-white tracking-wide">مسجد الماجـد</h1>
-                    <p class="text-xs sm:text-sm text-emerald-300 font-bold mt-0.5">إدارة أهل القرآن الكريم - تحفيظ ومراجعة (المحلة الكبرى)</p>
+                    <h1 class="font-bold text-lg leading-tight">مسجد الماجد</h1>
+                    <p class="text-xs text-emerald-400">منصة أهل القرآن - المحلة الكبرى</p>
                 </div>
             </div>
+            <!-- Developer Easter Egg Trigger -->
+            <button onclick="toggleDevModal()" class="text-xs text-slate-500 hover:text-emerald-400 transition cursor-pointer">
+                <i class="fa-solid fa-code"></i>
+            </button>
+        </div>
+    </header>
 
-            <!-- أزرار التواصل والتوجيه -->
-            <div class="flex flex-wrap gap-3 w-full md:w-auto justify-center">
-                <a href="https://www.google.com/maps/search/?api=1&query=30.973671,31.180814" target="_blank" class="glass border border-slate-700/80 hover:border-emerald-500/50 px-4 py-2.5 rounded-xl text-slate-200 text-xs font-bold flex items-center gap-2 transition group">
-                    <i class="fa-solid fa-location-dot text-emerald-400 text-sm group-hover:scale-125 transition"></i>
-                    <span>موقع المسجد</span>
-                </a>
-                <a href="https://wa.me/201226964940" target="_blank" class="bg-emerald-600 hover:bg-emerald-500 text-slate-950 px-5 py-2.5 rounded-xl text-xs font-black flex items-center gap-2 shadow-lg transition">
-                    <i class="fa-brands fa-whatsapp text-base"></i>
-                    <span>تواصل مع الشيخ</span>
-                </a>
-            </div>
-        </header>
+    <main class="max-w-4xl mx-auto p-4 w-full space-y-6">
 
-        <!-- المحتوى الرئيسي (شبكة Grid تتأقلم مع الشاشات) -->
-        <main class="p-4 sm:p-6 lg:p-8 grid grid-cols-1 lg:grid-cols-3 gap-6">
-
-            <!-- العمود الأول: العناوين والموقع وآية اليوم ومواعيد الصلاة -->
-            <div class="space-y-5">
-                <!-- كارت موقع المسجد -->
-                <a href="https://www.google.com/maps/search/?api=1&query=30.973671,31.180814" target="_blank" class="block bg-gradient-to-r from-slate-800 to-slate-900 border border-slate-700/80 hover:border-emerald-500/40 p-4 rounded-2xl shadow-lg transition group">
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center gap-3">
-                            <div class="w-11 h-11 bg-emerald-500/10 border border-emerald-500/30 rounded-xl flex items-center justify-center text-emerald-400 text-lg group-hover:bg-emerald-500 group-hover:text-slate-950 transition">
-                                <i class="fa-solid fa-map-location-dot"></i>
-                            </div>
-                            <div>
-                                <h4 class="text-xs font-bold text-white">العنوان واللوكيشن</h4>
-                                <p class="text-[11px] text-slate-400 mt-0.5">المحلة الكبرى - اضغط للفتح على الخريطة</p>
-                            </div>
-                        </div>
-                        <i class="fa-solid fa-arrow-left text-xs text-emerald-400 group-hover:-translate-x-1 transition"></i>
-                    </div>
-                </a>
-
-                <!-- كارت آية اليوم -->
-                <div class="bg-gradient-to-r from-emerald-950/80 to-slate-900 border border-emerald-500/30 p-5 rounded-2xl relative overflow-hidden shadow-lg">
-                    <div class="flex justify-between items-center mb-3">
-                        <span class="text-xs text-emerald-400 font-bold"><i class="fa-solid fa-book-quran ml-1"></i> آية اليوم</span>
-                        <span class="text-[10px] text-slate-400">سورة الكهف</span>
-                    </div>
-                    <p class="text-sm font-semibold text-emerald-100 text-center leading-relaxed font-serif my-2">
-                        "إِنَّهُمْ فِتْيَةٌ آمَنُوا بِرَبِّهِمْ وَزِدْنَاهُمْ هُدًى"
-                    </p>
-                </div>
-
-                <!-- شريط صلاة العصر (تم تصحيح الموعد إلى 4:22 PM) -->
-                <div class="bg-slate-800/90 border border-slate-700/70 p-4 rounded-2xl flex items-center justify-between">
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 bg-amber-500/10 border border-amber-500/30 rounded-xl flex items-center justify-center text-amber-400 text-base">
-                            <i class="fa-solid fa-sun"></i>
-                        </div>
-                        <div>
-                            <p class="text-[10px] text-slate-400">الصلاة القادمة</p>
-                            <h4 class="text-xs font-bold text-white">صلاة العصر</h4>
-                        </div>
-                    </div>
-                    <span class="text-xs font-black text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-3 py-1 rounded-lg">
-                        4:22 PM
-                    </span>
-                </div>
+        <!-- Prayer Times & Timer Section -->
+        <section class="bg-gradient-to-br from-emerald-950/60 to-slate-900 border border-emerald-500/30 rounded-2xl p-5 shadow-xl text-center relative overflow-hidden">
+            <div class="absolute -right-10 -bottom-10 w-32 h-32 bg-emerald-500/10 rounded-full blur-2xl"></div>
+            
+            <p class="text-sm text-slate-400 mb-1">الصلاة القادمة:</p>
+            <h2 class="text-3xl font-extrabold text-emerald-400 mb-3" id="next-prayer-name">جاري التحميل...</h2>
+            
+            <div class="inline-block bg-slate-900/90 border border-emerald-500/40 rounded-xl px-6 py-3 mb-4 glow">
+                <span class="text-3xl font-mono font-bold tracking-widest text-emerald-300" id="prayer-timer">00:00:00</span>
             </div>
 
-            <!-- العمود الثاني: حلقات التحفيظ والمراجعة (ثابتة كما هي) -->
-            <div class="space-y-4 lg:col-span-1">
-                <h2 class="text-xs font-bold text-slate-400 uppercase tracking-wider flex items-center justify-between">
-                    <span class="flex items-center gap-2"><i class="fa-solid fa-users text-emerald-400"></i> حلقات التحفيظ والمراجعة</span>
-                    <span class="text-[9px] bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-2 py-0.5 rounded-full">معلنة</span>
-                </h2>
-                
-                <!-- المجموعة 1 -->
-                <div class="bg-slate-800/80 hover:bg-slate-800 border border-slate-700/60 p-4 rounded-2xl shadow transition flex justify-between items-center gap-3">
-                    <div>
-                        <span class="text-[10px] bg-emerald-500/10 text-emerald-400 font-bold px-2 py-0.5 rounded-md border border-emerald-500/20">المجادلة - تبارك - عم</span>
-                        <h3 class="font-bold text-white text-sm mt-1.5">مجموعة الأجزاء الثلاثة</h3>
-                        <p class="text-[11px] text-slate-300 mt-1"><i class="fa-regular fa-calendar ml-1 text-emerald-400"></i> الأحد - الثلاثاء - الخميس</p>
-                        <p class="text-[10px] text-emerald-400 font-bold mt-0.5"><i class="fa-regular fa-clock ml-1"></i> 5:00 مساءً (بعد العصر)</p>
-                    </div>
-                    <a href="https://wa.me/201226964940?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D9%88%D8%AF%20%D8%A7%D9%84%D8%A7%D9%86%D8%B6%D9%85%D8%A7%D9%85%20%D8%A5%D9%84%D9%89%20%D9%85%D8%AC%D9%85%D9%88%D8%B9%D8%A9%20%D8%A3%D8%AC%D8%B2%D8%A7%D8%A1%20(%D8%A7%D9%84%D9%85%D8%AC%D8%A7%D8%AF%D9%84%D8%A9%20-%20%D8%AA%D8%A8%D8%A7%D8%B1%D9%83%20-%20%D8%B9%D9%85)%20%D8%A8%D9%85%D8%B3%D8%AC%D8%AF%20%D8%A7%D9%84%D9%85%D8%A7%D8%AC%D8%AF" target="_blank" class="bg-emerald-600 hover:bg-emerald-500 text-slate-950 text-xs font-black px-3.5 py-2.5 rounded-xl shadow-lg transition shrink-0 flex items-center gap-1.5">
-                        انضمام <i class="fa-brands fa-whatsapp text-sm"></i>
-                    </a>
-                </div>
+            <!-- Prayer Grid -->
+            <div class="grid grid-cols-5 gap-2 pt-4 border-t border-slate-800 text-center text-xs md:text-sm">
+                <div class="p-2 rounded-lg bg-slate-900/50" id="card-Fajr"><p class="text-slate-400">الفجر</p><p class="font-bold text-slate-200 mt-1" id="time-Fajr">--:--</p></div>
+                <div class="p-2 rounded-lg bg-slate-900/50" id="card-Dhuhr"><p class="text-slate-400">الظهر</p><p class="font-bold text-slate-200 mt-1" id="time-Dhuhr">--:--</p></div>
+                <div class="p-2 rounded-lg bg-slate-900/50" id="card-Asr"><p class="text-slate-400">العصر</p><p class="font-bold text-slate-200 mt-1" id="time-Asr">--:--</p></div>
+                <div class="p-2 rounded-lg bg-slate-900/50" id="card-Maghrib"><p class="text-slate-400">المغرب</p><p class="font-bold text-slate-200 mt-1" id="time-Maghrib">--:--</p></div>
+                <div class="p-2 rounded-lg bg-slate-900/50" id="card-Isha"><p class="text-slate-400">العشاء</p><p class="font-bold text-slate-200 mt-1" id="time-Isha">--:--</p></div>
+            </div>
+        </section>
 
-                <!-- المجموعة 2 -->
-                <div class="bg-slate-800/80 hover:bg-slate-800 border border-slate-700/60 p-4 rounded-2xl shadow transition flex justify-between items-center gap-3">
-                    <div>
-                        <span class="text-[10px] bg-indigo-500/10 text-indigo-400 font-bold px-2 py-0.5 rounded-md border border-indigo-500/20">جزء الشورى</span>
-                        <h3 class="font-bold text-white text-sm mt-1.5">مجموعة جزء الشورى</h3>
-                        <p class="text-[11px] text-slate-300 mt-1"><i class="fa-regular fa-calendar ml-1 text-indigo-400"></i> الأحد - الثلاثاء - الأربعاء</p>
-                        <p class="text-[10px] text-indigo-400 font-bold mt-0.5"><i class="fa-regular fa-clock ml-1"></i> 9:00 مساءً (بعد العشاء)</p>
-                    </div>
-                    <a href="https://wa.me/201226964940?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D9%88%D8%AF%20%D8%A7%D9%84%D8%A7%D9%86%D8%B6%D9%85%D8%A7%D9%85%20%D8%A5%D9%84%D9%89%20%D9%85%D8%AC%D9%85%D9%88%D8%B9%D8%A9%20%D8%AC%D8%B2%D8%A1%20%D8%A7%D9%84%D8%B4%D9%88%D8%B1%D9%89%20%D8%A8%D9%85%D8%B3%D8%AC%D8%AF%20%D8%A7%D9%84%D9%85%D8%A7%D8%AC%D8%AF" target="_blank" class="bg-emerald-600 hover:bg-emerald-500 text-slate-950 text-xs font-black px-3.5 py-2.5 rounded-xl shadow-lg transition shrink-0 flex items-center gap-1.5">
-                        انضمام <i class="fa-brands fa-whatsapp text-sm"></i>
-                    </a>
+        <!-- Quran Circles Section -->
+        <section class="bg-slate-900 border border-slate-800 rounded-2xl p-5">
+            <h3 class="text-lg font-bold text-emerald-400 mb-4 flex items-center gap-2">
+                <i class="fa-solid fa-book-quran"></i> حلقات ومجموعات تحفيظ القرآن
+            </h3>
+            <div class="grid md:grid-cols-2 gap-4">
+                <div class="bg-slate-950/60 p-4 rounded-xl border border-slate-800">
+                    <h4 class="font-bold text-emerald-300">حلقات البنين</h4>
+                    <p class="text-sm text-slate-300 mt-1">مواعيد يومية عقب صلاة العصر والمغرب.</p>
                 </div>
-
-                <!-- قسم الإناث -->
-                <div class="bg-gradient-to-r from-pink-950/30 to-slate-900 border border-pink-500/30 p-4 rounded-2xl flex items-center justify-between">
-                    <div>
-                        <span class="text-[9px] bg-pink-500/20 text-pink-300 font-bold px-2 py-0.5 rounded-full border border-pink-500/30">حلقات البنات</span>
-                        <h4 class="text-xs font-bold text-white mt-1">حلقات التحفيظ للإناث</h4>
-                        <p class="text-[10px] text-slate-400 mt-0.5">المواعيد تعلن قريباً</p>
-                    </div>
-                    <a href="https://wa.me/201226964940?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D9%8BB%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D9%85%D9%88%D8%A7%D8%B9%D9%8A%D8%AF%20%D8%AD%D9%84%D9%82%D8%A7%D8%AA%20%D8%A7%D9%84%D8%A8%D9%86%D8%A7%D8%AA%20%D8%A8%D9%85%D8%B3%D8%AC%D8%AF%20%D8%A7%D9%84%D9%85%D8%A7%D8%AC%D8%AF" target="_blank" class="bg-pink-600 hover:bg-pink-500 text-white text-[10px] font-bold px-3 py-2 rounded-xl transition shrink-0">
-                        حجز مسبق
-                    </a>
+                <div class="bg-slate-950/60 p-4 rounded-xl border border-slate-800">
+                    <h4 class="font-bold text-emerald-300">حلقات البنات والأمهات</h4>
+                    <p class="text-sm text-slate-300 mt-1">مواعيد خاصة تحت إشراف نخبة من المعلمات.</p>
                 </div>
             </div>
+        </section>
 
-            <!-- العمود الثالث: لوحة الشرف والمسابقات -->
-            <div class="space-y-5">
-                <!-- لوحة الشرف -->
-                <div class="bg-gradient-to-br from-slate-800 to-slate-900 border border-emerald-500/30 p-5 rounded-2xl shadow-xl">
-                    <div class="flex items-center justify-between mb-4">
-                        <h2 class="text-xs font-bold text-emerald-400 flex items-center gap-2">
-                            <i class="fa-solid fa-crown text-amber-400 text-sm"></i> لوحة شرف المتميزين
-                        </h2>
-                        <span class="text-[9px] bg-slate-700 text-slate-300 px-2 py-0.5 rounded">تكريم الأسبوع</span>
-                    </div>
-                    <div class="grid grid-cols-3 gap-2 text-center">
-                        <div class="bg-slate-800/90 border border-slate-700 p-2.5 rounded-xl">
-                            <div class="text-base mb-1">🥇</div>
-                            <p class="text-[11px] font-bold text-white truncate">أحمد محمود</p>
-                            <span class="text-[9px] text-emerald-400 font-semibold">المجادلة</span>
-                        </div>
-                        <div class="bg-slate-800/90 border border-amber-500/40 p-2.5 rounded-xl transform -translate-y-1">
-                            <div class="text-base mb-1">👑</div>
-                            <p class="text-[11px] font-bold text-white truncate">محمد علي</p>
-                            <span class="text-[9px] text-amber-400 font-semibold">الشورى</span>
-                        </div>
-                        <div class="bg-slate-800/90 border border-slate-700 p-2.5 rounded-xl">
-                            <div class="text-base mb-1">🥉</div>
-                            <p class="text-[11px] font-bold text-white truncate">عمر ياسر</p>
-                            <span class="text-[9px] text-emerald-400 font-semibold">تبارك</span>
-                        </div>
-                    </div>
-                </div>
+        <!-- Call To Action (WhatsApp Sheikh Hatem) -->
+        <section class="bg-emerald-950/40 border border-emerald-500/30 rounded-2xl p-5 text-center">
+            <h3 class="text-lg font-bold text-white mb-2">للإنضمام أو الاستفسار المباشر</h3>
+            <p class="text-sm text-slate-300 mb-4">تواصل مباشرة مع إدارة المسجد (الشيخ حاتم مجدي)</p>
+            <a href="https://wa.me/201226964940" target="_blank" class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3 px-6 rounded-xl transition glow">
+                <i class="fa-brands fa-whatsapp text-xl"></i>
+                تواصل عبر الواتساب
+            </a>
+        </section>
 
-                <!-- مسابقة التسميع -->
-                <div class="bg-gradient-to-br from-amber-500/15 via-amber-600/10 to-transparent border border-amber-500/40 rounded-2xl p-4 relative shadow-xl">
-                    <div class="flex items-center justify-between mb-2">
-                        <span class="bg-amber-500 text-slate-950 text-[10px] font-black px-2.5 py-0.5 rounded-full shadow">
-                            <i class="fa-solid fa-trophy ml-1"></i> مسابقة التسميع الكبرى
-                        </span>
-                        <span class="text-[10px] text-amber-300 font-bold animate-pulse">قريباً</span>
-                    </div>
-                    <h3 class="text-xs font-bold text-white mt-1">اختبار أجزاء (المجادلة - تبارك - عم)</h3>
-                    <p class="text-[10px] text-slate-300 mt-0.5">الموعد: يوم الجمعة القادم بعد العصر مباشرةً.</p>
-                </div>
+        <!-- Location Section -->
+        <section class="bg-slate-900 border border-slate-800 rounded-2xl p-5">
+            <h3 class="text-lg font-bold text-emerald-400 mb-3 flex items-center gap-2">
+                <i class="fa-solid fa-location-dot"></i> موقع المسجد (المحلة الكبرى)
+            </h3>
+            <div class="rounded-xl overflow-hidden border border-slate-700 h-56">
+                <iframe 
+                    src="https://www.google.com/maps?q=30.973671,31.180814&hl=ar&z=16&output=embed" 
+                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
+                </iframe>
             </div>
+        </section>
 
-        </main>
+    </main>
 
-        <!-- الفوتر السري -->
-        <footer class="text-center py-4 text-xs text-slate-500 select-none border-t border-slate-800/60">
-            <span id="secretTrigger" class="cursor-pointer hover:text-slate-400 transition">جميع الحقوق محفوظة © 2026 مسجد الماجد</span>
-        </footer>
+    <!-- Footer -->
+    <footer class="bg-slate-900 border-t border-slate-800 p-4 text-center text-xs text-slate-500">
+        <p>جميع الحقوق محفوظة © مسجد الماجد - المحلة الكبرى 2026</p>
+    </footer>
 
-    </div>
-
-    <!-- نافذة المطور المخفية (أَنَس) -->
-    <div id="devModal" class="hidden fixed inset-0 bg-slate-950/95 backdrop-blur-md z-50 flex items-center justify-center p-4">
-        <div class="bg-slate-900 border-2 border-emerald-500 rounded-3xl p-6 text-center text-white shadow-2xl max-w-xs w-full relative">
-            <button onclick="closeDevModal()" class="absolute top-3 left-4 text-slate-400 hover:text-white text-sm font-bold">✕</button>
-            <div class="w-16 h-16 bg-emerald-500/10 border border-emerald-500/40 rounded-2xl flex items-center justify-center mx-auto mb-3 text-2xl text-emerald-400 shadow-inner">
+    <!-- Developer Modal (Easter Egg) -->
+    <div id="devModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4 z-50">
+        <div class="bg-slate-900 border border-emerald-500/40 rounded-2xl p-6 max-w-sm w-full text-center relative">
+            <button onclick="toggleDevModal()" class="absolute top-3 left-3 text-slate-400 hover:text-white">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+            <div class="w-16 h-16 bg-emerald-600/20 text-emerald-400 rounded-full flex items-center justify-center mx-auto mb-3 text-2xl border border-emerald-500/30">
                 <i class="fa-solid fa-code"></i>
             </div>
-            <span class="bg-emerald-500/10 text-emerald-400 text-[10px] font-bold px-3 py-1 rounded-full border border-emerald-500/20">Authorized Developer</span>
-            <h3 class="text-lg font-black text-white mt-3">تم التطوير بواسطة</h3>
-            <p class="text-xl font-bold text-emerald-400 mt-0.5">المبرمج أنس</p>
-            <p class="text-xs text-slate-400 mt-1">Full-Stack & UI/UX Solutions</p>
-            <div class="mt-5 pt-3 border-t border-slate-800/80 flex justify-between items-center text-[10px] text-slate-400">
-                <span>رقم التواصل: 01124313665</span>
-                <span class="text-emerald-400 font-bold">v3.7 Final</span>
+            <h3 class="font-bold text-lg text-white">تطوير وتصميم</h3>
+            <p class="text-emerald-400 font-semibold text-md mt-1">المهندس أنس (Anas)</p>
+            <p class="text-xs text-slate-400 mt-2">تطوير منصات وتطبيقات الويب والمساجد</p>
+            <div class="mt-4 pt-4 border-t border-slate-800 text-xs text-slate-300">
+                <p><i class="fa-solid fa-phone text-emerald-400 ml-1"></i> 01124313665</p>
             </div>
         </div>
     </div>
 
+    <!-- Script Section -->
     <script>
-        // كود السر للمطور أَنَس (4 ضغطات e للكمبيوتر أو ضغط مطول 3 ثوان للموبايل)
-        let keyPressCount = 0, keyTimer;
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'e' || e.key === 'E' || e.key === 'ث') {
-                keyPressCount++;
-                clearTimeout(keyTimer);
-                keyTimer = setTimeout(() => { keyPressCount = 0; }, 2000);
-                if (keyPressCount === 4) { openDevModal(); keyPressCount = 0; }
+        function toggleDevModal() {
+            const modal = document.getElementById('devModal');
+            modal.classList.toggle('hidden');
+            modal.classList.toggle('flex');
+        }
+
+        async function fetchPrayerTimes() {
+            try {
+                // API مواعيد الصلاة للمحلة الكبرى
+                const res = await fetch('https://api.aladhan.com/v1/timingsByCity?city=El%20Mahalla%20El%20Kubra&country=Egypt&method=5');
+                const data = await res.json();
+                const timings = data.data.timings;
+
+                // تحديث الأوقات في الجدول
+                document.getElementById('time-Fajr').innerText = formatTime(timings.Fajr);
+                document.getElementById('time-Dhuhr').innerText = formatTime(timings.Dhuhr);
+                document.getElementById('time-Asr').innerText = formatTime(timings.Asr);
+                document.getElementById('time-Maghrib').innerText = formatTime(timings.Maghrib);
+                document.getElementById('time-Isha').innerText = formatTime(timings.Isha);
+
+                startTimer(timings);
+            } catch (err) {
+                console.error("خطأ في تحميل أوقات الصلاة", err);
             }
-        });
+        }
 
-        const trigger = document.getElementById('secretTrigger');
-        let touchTimer;
-        trigger.addEventListener('touchstart', function() { touchTimer = setTimeout(openDevModal, 3000); });
-        trigger.addEventListener('touchend', function() { clearTimeout(touchTimer); });
+        function formatTime(timeStr) {
+            const [h, m] = timeStr.split(':');
+            let hour = parseInt(h);
+            const ampm = hour >= 12 ? 'م' : 'ص';
+            hour = hour % 12 || 12;
+            return `${hour}:${m} ${ampm}`;
+        }
 
-        function openDevModal() { document.getElementById('devModal').classList.remove('hidden'); }
-        function closeDevModal() { document.getElementById('devModal').classList.add('hidden'); }
+        function startTimer(timings) {
+            const list = [
+                { name: "الفجر", time: timings.Fajr, id: "Fajr" },
+                { name: "الظهر", time: timings.Dhuhr, id: "Dhuhr" },
+                { name: "العصر", time: timings.Asr, id: "Asr" },
+                { name: "المغرب", time: timings.Maghrib, id: "Maghrib" },
+                { name: "العشاء", time: timings.Isha, id: "Isha" }
+            ];
+
+            function update() {
+                const now = new Date();
+                let next = null;
+
+                // إعادة إعادة تمييز الكروت
+                list.forEach(p => {
+                    document.getElementById(`card-${p.id}`).classList.remove('border', 'border-emerald-500', 'bg-emerald-900/30');
+                });
+
+                for (let p of list) {
+                    const [h, m] = p.time.split(':');
+                    const pDate = new Date();
+                    pDate.setHours(h, m, 0, 0);
+
+                    if (pDate > now) {
+                        next = { ...p, target: pDate };
+                        break;
+                    }
+                }
+
+                // لو أوقات النهار خلصت، الصلاة التالية الفجر بكرة
+                if (!next) {
+                    const [h, m] = list[0].time.split(':');
+                    const tomorrow = new Date();
+                    tomorrow.setDate(tomorrow.getDate() + 1);
+                    tomorrow.setHours(h, m, 0, 0);
+                    next = { ...list[0], target: tomorrow };
+                }
+
+                // تمييز الصلاة القادمة
+                document.getElementById("next-prayer-name").innerText = next.name;
+                document.getElementById(`card-${next.id}`).classList.add('border', 'border-emerald-500', 'bg-emerald-900/30');
+
+                const diff = next.target - now;
+                const hours = Math.floor(diff / (1000 * 60 * 60));
+                const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                const secs = Math.floor((diff % (1000 * 60)) / 1000);
+
+                document.getElementById("prayer-timer").innerText = 
+                    `${hours.toString().padStart(2, '0')}:${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+            }
+
+            update();
+            setInterval(update, 1000);
+        }
+
+        fetchPrayerTimes();
     </script>
 </body>
 </html>
+
